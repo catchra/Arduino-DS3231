@@ -129,6 +129,9 @@ class DS3231
 	char* dateFormat(const char* dateFormat, RTCDateTime dt);
 	char* dateFormat(const char* dateFormat, RTCAlarmTime dt);
 
+	long time2long(uint16_t days, uint8_t hours, uint8_t minutes, uint8_t seconds);
+	uint16_t date2days(uint16_t year, uint8_t month, uint8_t day);
+
     private:
 	RTCDateTime t;
 
@@ -141,8 +144,6 @@ class DS3231
 	uint8_t bcd2dec(uint8_t bcd);
 	uint8_t dec2bcd(uint8_t dec);
 
-	long time2long(uint16_t days, uint8_t hours, uint8_t minutes, uint8_t seconds);
-	uint16_t date2days(uint16_t year, uint8_t month, uint8_t day);
 	uint8_t daysInMonth(uint16_t year, uint8_t month);
 	uint16_t dayInYear(uint16_t year, uint8_t month, uint8_t day);
 	bool isLeapYear(uint16_t year);
